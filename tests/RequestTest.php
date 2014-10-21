@@ -201,7 +201,7 @@ class RequestTest extends PHPUnit_Framework_TestCase {
 
 	public function testCheckAutenticity()
 	{
-		$postData = [
+		$postData = array(
 			"Ds_TransactionType" => "0",
 			"Ds_Card_Country" => "724",
 			"Ds_Date" => "29/09/2014",
@@ -216,7 +216,7 @@ class RequestTest extends PHPUnit_Framework_TestCase {
 			"Ds_MerchantCode" => "5556123123",
 			"Ds_Amount" => "4554",
 			"Ds_Terminal" => "001"
-		];
+        );
 
 		$request = new Request(5556123123, 'abcdefg123456', false, 1, 'MassiveDynamics');
 

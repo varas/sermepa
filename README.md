@@ -3,6 +3,7 @@ Sermepa [![Build Status](https://travis-ci.org/killgt/sermepa.svg)](https://trav
 
 PHP Sermepa payments utility
 
+> Fork to enable php 5.3 support
 
 ## Usage
 
