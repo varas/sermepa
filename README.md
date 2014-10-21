@@ -1,7 +1,7 @@
-Sermepa [![Build Status](https://travis-ci.org/killgt/sermepa.svg)](https://travis-ci.org/killgt/sermepa)
-=======
+Sermepa Request [![Build Status](https://travis-ci.org/killgt/sermepa.svg)](https://travis-ci.org/killgt/sermepa)
+===============
 
-PHP Sermepa payments utility
+PHP Sermepa request payments utility
 
 > Fork to enable php 5.3 support
 
@@ -10,7 +10,7 @@ PHP Sermepa payments utility
 ```php
 use Killgt\Sermepa\Request;
 
-$request = new Killgt\Sermepa\Request($fuc, $key, $useProductionEnviroment, $terminal, $businessName);
+$request = new Request($fuc, $key, $useProductionEnviroment, $terminal, $businessName);
 
 $request->setAmount(45.54);
 $request->setOrder('2014abcd1234');
@@ -26,7 +26,7 @@ echo $request->render(); //outputs the form and auto-submit
 
 ### Checking the callback
 ```php
-$request = new Killgt\Sermepa\Request;
+$request = new Request();
 $request->setKey($key);
 
 if ($request->checkCallback($_POST)) {
