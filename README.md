@@ -26,12 +26,23 @@ echo $request->render(); //outputs the form and auto-submit
 
 ### Checking the callback
 ```php
+use Killgt\Sermepa\Request;
+use Killgt\Sermepa\Exceptions\CallbackErrorException;
+
 $request = new Request();
 $request->setKey($key);
 
-if ($request->checkCallback($_POST)) {
-	// Get $_POST['Ds_Order'] and update your order
-} else {
-	// Something went wrong
+try {
+    $callbackOk = $request->checkCallback($_POST);
+} catch(CallbackErrorException $e) {
+    // do something usefull as logging  $e->getMessage();
+}
+
+if ($callbackOk) {
+    // Get $_POST['Ds_Order'] and update your order
+    // } else {
+    //     // Something went wrong
+    //     }
+    // }
 }
 ```
